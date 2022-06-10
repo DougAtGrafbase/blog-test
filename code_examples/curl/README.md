@@ -13,21 +13,33 @@ In each case you must modify the source file to:
   You can get the endpoint for a project branch by selecting the 
   **Branches** tab in the project's dashboard.
 
+One of the features of **curl** is being able to have the command read data from a file.
+We use that feature here, so that different operations use a similar model,
+where *FILENAME* contains the GraphQL query or mutation:
+
+```sh
+curl -X POST -H "content-type: application/json" -H "authorization: Bearer API-KEY" -d @FILENAME "PROJECT-ENDPOINT"
+```
+
 ## Creating a user
 
-The following command creates a user.
+The following mutation creates a user
+(note the slightly difference to a GraphQL mutation).
+You must replace *USER-EMAIL* with the email address of the user
+and *USER-NAME* with the name of the user.
+Save the mutation and use that as the name of the file for the **curl** command.
 It returns the ID of the new user.
 
-```node
-node CreateUser.mjs
+```graphql
+{"mutation":"{ userCreate(input: {email: "USER-EMAIL", name: "USER-NAME"}) { user { id } } }"}
 ```
 
 ## Listing the users
 
 The following command lists the users.
 
-```node
-node ListUsers.mjs
+```sh
+curl -X POST -H "content-type: application/json" -H "authorization: Bearer API-KEY" -d '{"query":"{ userCollection(first: 1) { edges { node { id } } } }"}' "PROJECT-ENDPOINT"
 ```
 
 ## Creating a post
@@ -37,16 +49,16 @@ It returns the ID of the new post.
 You must replace *USER-ID* with the ID of the user you just created 
 in **CreateUser.mjs**.
 
-```node
-node CreatePost.mjs
+```sh
+curl 
 ```
 
 ## Listing the posts
 
 The following command lists the posts.
 
-```node
-node ListPosts.mjs
+```sh
+curl 
 ```
 
 ## Creating a comment from a user on a post
@@ -57,14 +69,14 @@ You must replace *USER-ID* with the ID of a user
 and *POST-ID* with the ID of a post
 in **CreateComment.mjs**.
 
-```node
-node CreateComment.mjs
+```sh
+curl 
 ```
 
 ## Listing the comments
 
 The following command lists the comments.
 
-```node
-node ListComments.mjs
+```sh
+curl 
 ```
