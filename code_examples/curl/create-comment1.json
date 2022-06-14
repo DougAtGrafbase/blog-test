@@ -1,0 +1,1 @@
+{"query":"mutation { commentCreate(input: { post: {link: \"Post#01G57AM4WBKS58S3RCCXYPWHP2\"}, content: \"Luv it\", user: {link: \"User#01G5759Y47KN3RDXC76SPB0R64\"} }) { comment { id } } }"}

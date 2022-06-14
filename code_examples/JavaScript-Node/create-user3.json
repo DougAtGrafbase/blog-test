@@ -1,0 +1,1 @@
+{"query":"mutation { userCreate(input: {email: \"random@abc.com\", name: \"Random User\"}) { user { id } } }"}
