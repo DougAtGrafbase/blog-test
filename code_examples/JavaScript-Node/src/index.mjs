@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
 import fs from "fs";
-//const fs = require('fs');
 
 var apiKey = process.env.API_KEY;
 var endpoint = process.env.ENDPOINT;
@@ -28,8 +27,6 @@ if (myArgs[0] == "-d") {
   process.exit();
 }
 
-// var content = '{"query":"{ userCollection(first: 10) { edges { node { id } } } }"}';
-
 fs.readFile(filename, 'utf8', (err, content) => {
   if (err) {
     console.error(err);
@@ -41,46 +38,14 @@ fs.readFile(filename, 'utf8', (err, content) => {
     console.log(content);
   }
 
-  var q = "`" + content + "`";
-
-  var body = JSON.stringify({
-    query: q
-  });
-
-  /*
-  var dummy = '{"query":"{ userCollection(first: 10) { edges { node { id } } } }"}"';
-
-  if (body == dummy) {
-    console.log("body and dummy are equal. body:");
-    console.log(body);
-    console.log("dummy:");
-    console.log(dummy);
-  } else {
-    console.log("body and dummy are NOT equal. body:");
-    console.log(body);
-    console.log("dummy:");
-    console.log(dummy);
-  }
-
-  if (debug) {
-    console.log("Body:");
-    console.log(body);
-  }
-  */
-
-  fetch(endpoint, {
+  const results = fetch(endpoint, {
     method: "POST",
     headers: {
       "content-type": "application/json",
       "authorization": "Bearer " + apiKey
     },
-    body: //JSON.stringify({
-      body
-    //})
-  }).then(async (data) => {
-    console.log(await data.json())
+    body: content
   })
+    .then(res => res.text())
+    .then(text => console.log(text));
 });
-
-// var content = JSON.parse(fs.readFileSync(filename, 'utf8'));
-

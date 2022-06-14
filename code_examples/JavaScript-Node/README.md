@@ -30,6 +30,13 @@ To jump start your copy of this project:
    npm init -y
    ```
 
+4. Since our code uses the **fetch** library,
+   install it:
+
+   ```sh
+   npm install node-fetch
+   ```
+
 ## Configuring your environment
 
 This file describes the JavaScript/Node commands to manage a blog.
