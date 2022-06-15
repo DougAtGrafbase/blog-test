@@ -48,23 +48,21 @@ To jump start your copy of this project:
 
    ```json
    {
+     "include": ["src"],
+     "exclude": ["node_modules"],
      "compilerOptions": {
-       "module": "commonjs",
-       "esModuleInterop": true,
-       "target": "es6",
-       "moduleResolution": "node",
-       "sourceMap": true,
        "outDir": "dist"
      },
      "lib": ["es2015"]
    }
    ```
 
-   * **module** specifies the module code generation method. **Node** uses **commonjs**.
-   * **target** specifies the output language level.
-   * **moduleResolution** helps the compiler figure out to what an import refers. 
-     The value node mimics the Node module resolution mechanism.
-   * **outDir** specifies the directory the compiler outputs .js files after transpilation.
+7. Since our code uses the **fetch** library,
+   install it (we need version 2 as v3 is an ESM-only module):
+
+   ```sh
+   npm install node-fetch@2
+   ```
 
 ## Configuring your environment
 
@@ -95,35 +93,29 @@ You can get the API keys for your project's branch by selecting the
 You can get the endpoint for a project branch by selecting the 
 **Branches** tab in the project's dashboard.
 
-## Creating the Source Code
+## Compiling and Running the Code
 
-Let's create our main program in **src/index.ts**.
+The TypeScript source code is in **src/index.ts**.
 It takes one argument, 
 the name of the JSON file containing the query or mutation.
 
-1. Create the file:
-   ```sh
-   mkdir src
-   cd src
-   touch index.ts
-   ```
+Enter the following command to compile the TypeScript code to JavaScript:
 
-2. Add the following code to **index.ts**:
+```sh
+npx tsc
+```
 
-   ```typescript
-   ???
-   ```
+Enter the following command to execute the resulting TypeScript code,
+where *FILENAME* is the name of the JSON file containing the query or mutation:
+
+```sh
+node dist/index.js -d FILENAME
+```
 
 ## Queries and Mutations
 
-The command line to run the main program, in **src/index.ts**,
-is the following,
-where *FILENAME.json* is the name of the JSON file
-containing the query or mutation:
-
-```sh
-node src/index.mjs -d FILENAME.json
-```
+Save the following queries and mutations as
+*FILENAME.json* so you can call them from the main program.
 
 ## Creating a user
 
