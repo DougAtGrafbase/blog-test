@@ -1,1 +1,0 @@
-{"query":"{ userCollection(first: 10) { edges { node { id } } } }"}

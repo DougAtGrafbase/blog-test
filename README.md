@@ -2,6 +2,9 @@
 
 This repo contains the source code for a Grafbase project that manages a blog.
 
+The project is on hold until we get auth working and I can work
+the code into a framework (NodeJS?).
+
 The schema in *grafbase/schema.graphql* defines
 types defined for a user, a post, and a comment,
 all based on the Grafbase template at

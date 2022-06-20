@@ -1,1 +1,0 @@
-{"query":"mutation { postCreate(input: { title: \"Mr Fantastic's first post\", content: \"Luv it\", user: {link: \"User#01G5759Y47KN3RDXC76SPB0R64\"} }) { post { id } } }"}

@@ -1,0 +1,64 @@
+{
+  "data": {
+    "userCollection": {
+      "edges": [
+        {
+          "node": {
+            "email": "doug@abc.com",
+            "name": "Snoop Doug",
+            "id": "User#01G5M8HVV56TC0XFN9YK4VZZR5"
+          }
+        },
+        {
+          "node": {
+            "email": "doug@abc.com",
+            "name": "Snoop Doug",
+            "id": "User#01G5M8GN05BPVJVYBYVTKNJGB0"
+          }
+        },
+        {
+          "node": {
+            "email": "doug@abc.com",
+            "name": "Snoop Doug",
+            "id": "User#01G5M7Y698416G7EGR5ZJD7QWP"
+          }
+        },
+        {
+          "node": {
+            "email": "gooze@abc.com",
+            "name": "Silly Goose",
+            "id": "User#01G5M7PWH78TMREEEWJH5F6BW7"
+          }
+        },
+        {
+          "node": {
+            "email": "random@abc.com",
+            "name": "Random User",
+            "id": "User#01G5794XN2PKW8S2JNWZW72WR9"
+          }
+        },
+        {
+          "node": {
+            "email": "somebody@abc.com",
+            "name": "SnoopDoug",
+            "id": "User#01G5762ZN8FF39FQNMP5B30NS0"
+          }
+        },
+        {
+          "node": {
+            "email": "fantastic@abc.com",
+            "name": "Mr Fantastic",
+            "id": "User#01G5759Y47KN3RDXC76SPB0R64"
+          }
+        },
+        {
+          "node": {
+            "email": "somebody@abc.com",
+            "name": "Snoop Doug",
+            "id": "User#01G554B001KYHKWM9HYW4PBS1B"
+          }
+        }
+      ]
+    }
+  }
+}
